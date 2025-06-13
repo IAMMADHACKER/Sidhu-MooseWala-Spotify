@@ -1,5 +1,7 @@
-/* Import Anonymous Pro font */
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 
 body {
     font-family: 'Anonymous Pro', monospace;
@@ -8,42 +10,16 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    animation: blink 0.4s ease-in-out;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-/* Centered container */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #121212;
 }
 
-/* Heading style */
-h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-/* Spotify iframe styling */
-.spotify-frame {
-    width: 100%;
-    max-width: 600px;
-    height: 352px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .spotify-frame {
-        max-width: 90%;
-        height: 300px;
-    }
+/* Optional: Add blinking animation to elements as needed */
+h1, h2, .spotify-frame {
+    animation: blink 0.4s ease-in-out;
 }
