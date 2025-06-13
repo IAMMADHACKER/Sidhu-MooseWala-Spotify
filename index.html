@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlackMafia Music Hub</title>
+    <title>Sidhu Mooswala</title>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
     <style>
         body {
@@ -13,6 +13,21 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition for theme change */
+        }
+
+        .main-line {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem; /* Adjust font size as needed */
+            color: #ffffff; /* Default color for the main line */
+            padding: 5px 15px;
+            border-radius: 10px;
+            /* Optional: Add a subtle background or border if you like */
+            /* background-color: rgba(0, 0, 0, 0.3); */
+            /* border: 1px solid rgba(255, 255, 255, 0.5); */
         }
 
         .container {
@@ -34,16 +49,66 @@
             max-width: 600px;
             border-radius: 12px;
         }
+
+        /* Theme Change Button Styling */
+        .theme-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #6200ee; /* A vibrant purple for the button */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px; /* Curvy edges */
+            cursor: pointer;
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-button:hover {
+            background-color: #3700b3; /* Darker purple on hover */
+        }
+
+        /* Light Theme Styles */
+        body.light-theme {
+            background-color: #f0f0f0;
+            color: #333333;
+        }
+
+        body.light-theme .theme-button {
+            background-color: #03dac6; /* Teal for light theme button */
+            color: #333333;
+        }
+
+        body.light-theme .theme-button:hover {
+            background-color: #018786; /* Darker teal on hover */
+        }
+
+        body.light-theme .main-line {
+            color: #333333; /* Darker color for main line in light theme */
+        }
     </style>
 </head>
 <body>
+    <button class="theme-button" onclick="toggleTheme()">Change Theme</button>
+
+    <div class="main-line">Sidhu MooseWala - A Tribute By BlackMafia
+    </div>
+
     <div class="container">
         <h1>Welcome To BlackMafia Music Hub 🎵</h1>
-        <h2>A Page Where You Can See My Spotify Playlist Of My Favourite Singer & Legend Sidhu MooseWala</h2>
+        <h2>A Page Where You Can See A Spotify Playlist Of A Singer & Legend Sidhu MooseWala</h2>
         <iframe class="spotify-frame" src="https://open.spotify.com/embed/playlist/2IcaJbnjvZC3Xhf5m64nd5?utm_source=generator"
             width="100%" height="352" frameborder="0" allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
         </iframe>
     </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+        }
+    </script>
 </body>
 </html>
